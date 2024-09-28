@@ -38,8 +38,8 @@ export class WebsocketService {
     });
   }
   // Unirse a una sesión
-  joinSession(sessionId: string, userName: string) {
-    this.socket.emit('joinSession', { sessionId, userName });
+  joinSession(sessionId: string, name: string) {
+    this.socket.emit('joinSession', { sessionId, name });
   }
 
   // Actualizar nombre

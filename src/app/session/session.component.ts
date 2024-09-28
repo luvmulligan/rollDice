@@ -15,18 +15,34 @@ export class SessionComponent {
   sessionId: string = '';
   playerReady: boolean = false;
   modalAbierto: boolean = false;
+  playerName: string = '';
+  players = [
+    { name: 'Jugador 1', score: 150 },
+    { name: 'Jugador 2', score: 200 },
+    { name: 'Jugador 3', score: 180 }
+  ];
 
-  constructor(private websocketService: WebsocketService) {}
+  constructor(private websocketService: WebsocketService) {
+    this.websocketService.onSessionUpdate().subscribe((users) => {
+      this.players = users;
+      console.log(users);
+    });
+  }
 
   // Método para crear una nueva sesión
   createNewSession() {
     this.websocketService.createSession().subscribe((response) => {
       this.sessionId = response.sessionId; // Guardar el ID de la sesión
       console.log('Nueva sesión creada con ID:', this.sessionId);
+      this.joinSession();
     });
   }
   startGame() {
     this.playerReady = true;
+    // this.websocketService.ready(this.sessionId);
+  }
+  markAsReady() {
+    this.websocketService.ready(this.sessionId);
   }
   abrirModal(event: Event) {
     event.preventDefault(); // Evita que el enlace recargue la página
@@ -37,10 +53,22 @@ export class SessionComponent {
     this.modalAbierto = false;
   }
   unirseASesion() {
+    this.joinSession();
+
     if (this.sessionId.trim()) {
       console.log('Unirse a la sesión con ID:', this.sessionId);
       // Lógica para unirse a la sesión con el ID proporcionado
       this.cerrarModal();
     }
+  }
+  joinSession() {
+    if (this.sessionId) {
+      this.websocketService.joinSession(this.sessionId, this.playerName);
+    } else {
+      // this.errorMessage = 'Debes ingresar un ID de sesión y un nombre de usuario';
+    }
+  }
+  updateName() {
+    this.websocketService.updateName(this.sessionId, this.playerName);
   }
 }

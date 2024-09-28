@@ -46,10 +46,10 @@ export class AppComponent implements OnInit {
   constructor(private webSocketService: WebsocketService) {}
 
   ngOnInit(): void {
-    this.webSocketService.onSessionUpdate().subscribe((users) => {
-      this.users = users;
-      console.log(this.users);
-    });
+    // this.webSocketService.onSessionUpdate().subscribe((users) => {
+    //   this.users = users;
+    //   console.log(this.users);
+    // });
 
     // Escuchar errores
     this.webSocketService.onError().subscribe((error) => {
@@ -93,23 +93,23 @@ export class AppComponent implements OnInit {
     // });
   }
   // Unirse a una sesión
-  joinSession() {
-    if (this.sessionId && this.userName) {
-      this.webSocketService.joinSession(this.sessionId, this.userName);
-    } else {
-      this.errorMessage = 'Debes ingresar un ID de sesión y un nombre de usuario';
-    }
-  }
+  // joinSession() {
+  //   if (this.sessionId && this.userName) {
+  //     this.webSocketService.joinSession(this.sessionId, this.userName);
+  //   } else {
+  //     this.errorMessage = 'Debes ingresar un ID de sesión y un nombre de usuario';
+  //   }
+  // }
 
   // Actualizar nombre
-  updateName(newName: string) {
-    this.webSocketService.updateName(this.sessionId, newName);
-  }
+  // updateName(newName: string) {
+  //   this.webSocketService.updateName(this.sessionId, newName);
+  // }
 
   // Marcar que estás listo
-  markAsReady() {
-    this.webSocketService.ready(this.sessionId);
-  }
+  // markAsReady() {
+  //   this.webSocketService.ready(this.sessionId);
+  // }
   // Función para lanzar los dados
   // rollDice() {
   //   if (this.myTurn) {
