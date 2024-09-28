@@ -11,7 +11,8 @@
   </div>
   <div class="lobby-content-wrapper">
     <div class="lobby-header">
-      <h1>Lobby del Juego</h1>
+      <h1>Paren Maren</h1>
+      <h3>Lobby del Juego</h3>
       <p>¡Prepárate para una experiencia épica!</p>
       <a href="#" class="join-session-link" (click)="abrirModal($event)">Unirse a Sesión</a>
     </div>
@@ -23,8 +24,14 @@
     </div>
 
     <div class="lobby-content">
-      <div class="button-start-game" *ngIf="sessionId">
-        <button class="create-session-btn" (click)="markAsReady()">Estoy listo</button>
+      <div class="button-start-game ready" *ngIf="sessionId">
+        <h3>Ready:</h3>
+
+        <div class="checkbox-container">
+          <input type="checkbox" id="cartoon-checkbox" (click)="markAsReady()" />
+          <label for="cartoon-checkbox"></label>
+        </div>
+        <!-- <button class="create-session-btn" (click)="markAsReady()">Estoy listo</button> -->
       </div>
     </div>
     <div class="lobby-header juegoid" *ngIf="sessionId">
@@ -45,7 +52,7 @@
   <div class="modal-content">
     <span class="close" (click)="cerrarModal()">&times;</span>
     <h2>Unirse a una Sesión</h2>
-    <label for="session-id">Ingresa el ID de la sesión:</label>
+    <span for="session-id">Ingresa el ID de la sesión:</span>
     <input type="text" id="session-id" [(ngModel)]="sessionId" />
     <button class="join-btn" (click)="unirseASesion()">Unirse</button>
   </div>

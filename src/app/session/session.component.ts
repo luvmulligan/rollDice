@@ -16,11 +16,8 @@ export class SessionComponent {
   playerReady: boolean = false;
   modalAbierto: boolean = false;
   playerName: string = '';
-  players = [
-    { name: 'Jugador 1', score: 150 },
-    { name: 'Jugador 2', score: 200 },
-    { name: 'Jugador 3', score: 180 }
-  ];
+  players: any[] = [];
+  isReady: boolean = false;
 
   constructor(private websocketService: WebsocketService) {
     this.websocketService.onSessionUpdate().subscribe((users) => {
@@ -42,7 +39,8 @@ export class SessionComponent {
     // this.websocketService.ready(this.sessionId);
   }
   markAsReady() {
-    this.websocketService.ready(this.sessionId);
+    this.isReady = !this.isReady;
+    this.websocketService.ready(this.sessionId, this.isReady);
   }
   abrirModal(event: Event) {
     event.preventDefault(); // Evita que el enlace recargue la página

@@ -47,8 +47,8 @@ export class WebsocketService {
     this.socket.emit('updateName', { sessionId, newName });
   }
   // Marcar que el usuario está listo
-  ready(sessionId: string) {
-    this.socket.emit('ready', { sessionId });
+  ready(sessionId: string, isReady: boolean) {
+    this.socket.emit('ready', { sessionId, isReady });
   }
 
   // Escuchar actualizaciones de la sesión
