@@ -1,53 +1,127 @@
-/* CSS Dice: An Experiment by Jonathan Sampson - @jonathansampson */
-.die.one:after {
-  box-shadow: 0 0.2em 0 #fff;
+// /* CSS Dice: An Experiment by Jonathan Sampson - @jonathansampson */
+// .die.one:after {
+//   box-shadow: 0 0.2em 0 #fff;
+// }
+// .die.two:after {
+//   background: transparent;
+//   box-shadow: -2.3em -2.3em 0 #345, 2.3em 2.3em 0 #345, -2.3em -2.3em 0 #fff, 2.3em 2.4em 0 #fff;
+// }
+// .die.three:after {
+//   box-shadow: -2.3em -2.3em 0 #345, 2.3em 2.3em 0 #345, -2.3em -2.3em 0 #fff, 2.3em 2.4em 0 #fff, 0 0.2em 0 #fff;
+// }
+// .die.four:after {
+//   background: transparent;
+//   box-shadow: -2.3em -2.3em 0 #345, 2.3em 2.3em 0 #345, -2.3em 2.3em 0 #345, 2.3em -2.3em 0 #345, -2.3em -2.3em 0 #fff,
+//     2.3em 2.4em 0 #fff, -2.3em 2.4em 0 #fff, 2.3em -2.3em 0 #fff;
+// }
+// .die.five:after {
+//   box-shadow: -2.3em -2.3em 0 #345, 2.3em 2.3em 0 #345, -2.3em 2.3em 0 #345, 2.3em -2.3em 0 #345, -2.3em -2.2em 0 #fff,
+//     2.3em -2.2em 0 #fff, 2.3em 2.4em 0 #fff, -2.3em 2.4em 0 #fff, 0 0.2em 0 #fff;
+// }
+// .die.six:after {
+//   background: transparent;
+//   box-shadow: -2.3em -2.3em 0 #345, -2.3em 0 0 #345, -2.3em 2.3em 0 #345, 2.3em -2.3em 0 #345, 2.3em 0 0 #345,
+//     2.3em 2.3em 0 #345, -2.3em -2.1em 0 #fff, -2.3em 0.2em 0 #fff, -2.3em 2.4em 0 #fff, 2.3em 2.4em 0 #fff,
+//     2.3em 0.2em 0 #fff, 2.3em -2.1em 0 #fff;
+// }
+// .die {
+//   border-top: 1px solid #f1f1f1;
+//   width: 50px;
+//   height: 50px;
+//   border-radius: 10px;
+//   position: relative;
+//   margin: 10px;
+//   font-size: 6px;
+//   display: inline-block;
+//   box-shadow: 0px 5px 0 #ccc, 0 6px 3px #444, 0 10px 5px #999;
+//   background-image: linear-gradient(top, #fefefe, #f1f1f1 80%);
+// }
+// .die:after {
+//   content: '';
+//   width: 20%;
+//   height: 20%;
+//   left: 50%;
+//   top: 50%;
+//   margin: -10%;
+//   background: #345;
+//   border-radius: 50%;
+//   display: block;
+//   position: absolute;
+// }
+// body {
+//   text-align: center;
+// }
+/* lobby.component.css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-.die.two:after {
-  background: transparent;
-  box-shadow: -2.3em -2.3em 0 #345, 2.3em 2.3em 0 #345, -2.3em -2.3em 0 #fff, 2.3em 2.4em 0 #fff;
+
+body,
+html {
+  height: 100%;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  background-color: #f0f8ff;
 }
-.die.three:after {
-  box-shadow: -2.3em -2.3em 0 #345, 2.3em 2.3em 0 #345, -2.3em -2.3em 0 #fff, 2.3em 2.4em 0 #fff, 0 0.2em 0 #fff;
-}
-.die.four:after {
-  background: transparent;
-  box-shadow: -2.3em -2.3em 0 #345, 2.3em 2.3em 0 #345, -2.3em 2.3em 0 #345, 2.3em -2.3em 0 #345, -2.3em -2.3em 0 #fff,
-    2.3em 2.4em 0 #fff, -2.3em 2.4em 0 #fff, 2.3em -2.3em 0 #fff;
-}
-.die.five:after {
-  box-shadow: -2.3em -2.3em 0 #345, 2.3em 2.3em 0 #345, -2.3em 2.3em 0 #345, 2.3em -2.3em 0 #345, -2.3em -2.2em 0 #fff,
-    2.3em -2.2em 0 #fff, 2.3em 2.4em 0 #fff, -2.3em 2.4em 0 #fff, 0 0.2em 0 #fff;
-}
-.die.six:after {
-  background: transparent;
-  box-shadow: -2.3em -2.3em 0 #345, -2.3em 0 0 #345, -2.3em 2.3em 0 #345, 2.3em -2.3em 0 #345, 2.3em 0 0 #345,
-    2.3em 2.3em 0 #345, -2.3em -2.1em 0 #fff, -2.3em 0.2em 0 #fff, -2.3em 2.4em 0 #fff, 2.3em 2.4em 0 #fff,
-    2.3em 0.2em 0 #fff, 2.3em -2.1em 0 #fff;
-}
-.die {
-  border-top: 1px solid #f1f1f1;
-  width: 50px;
-  height: 50px;
-  border-radius: 10px;
-  position: relative;
-  margin: 10px;
-  font-size: 6px;
-  display: inline-block;
-  box-shadow: 0px 5px 0 #ccc, 0 6px 3px #444, 0 10px 5px #999;
-  background-image: linear-gradient(top, #fefefe, #f1f1f1 80%);
-}
-.die:after {
-  content: '';
-  width: 20%;
-  height: 20%;
-  left: 50%;
-  top: 50%;
-  margin: -10%;
-  background: #345;
-  border-radius: 50%;
-  display: block;
-  position: absolute;
-}
-body {
+
+.lobby-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 20px;
   text-align: center;
+}
+
+.lobby-header h1 {
+  font-size: 2.5rem;
+  color: #ff6347;
+  text-shadow: 2px 2px #fdd835;
+  margin-bottom: 10px;
+}
+
+.lobby-header p {
+  font-size: 1.2rem;
+  color: #2f4f4f;
+  margin-bottom: 20px;
+}
+
+.lobby-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.create-session-btn {
+  background-color: #ff6347;
+  color: #fff;
+  font-size: 1.5rem;
+  padding: 15px 30px;
+  border: 3px solid #fdd835;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+  text-shadow: 1px 1px #000;
+}
+
+.create-session-btn:hover {
+  transform: scale(1.1);
+  background-color: #ff4500;
+}
+
+.create-session-btn:active {
+  transform: scale(1);
+}
+
+@media (max-width: 768px) {
+  .lobby-header h1 {
+    font-size: 2rem;
+  }
+
+  .create-session-btn {
+    font-size: 1.2rem;
+    padding: 10px 20px;
+  }
 }
