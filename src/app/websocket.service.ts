@@ -9,7 +9,7 @@ import { HttpClient } from '@angular/common/http';
 export class WebsocketService {
   private socket: Socket;
   constructor() {
-    this.socket = io('http://localhost:3000'); // URL del servidor WebSocket
+    this.socket = io('https://rolldice-7ef66a3b5fe3.herokuapp.com/'); // URL del servidor WebSocket
   }
 
   // Método para escuchar eventos
